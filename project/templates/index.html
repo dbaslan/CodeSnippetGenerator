@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Code Snippet Generator</title>
+        <link rel="stylesheet" href="/static/styles.css">     
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="/">Generate</a>
+            <a href="/about">About</a>  
+            <a href="/contact">Contact</a>
+        </div>
+        <div class="container">
+            <h1>Code Snippet Generator</h1>
+            <form action="/generate" method="post">
+                <label for="problem_description">Problem Description:</label><br>
+                <textarea id="problem_description" name="problem_description" rows="4" cols="50">{{ problem_description }}</textarea>
+                <br>
+                <p>Example: Write a print statement in Python</p>
+                <input type="submit" class="submit-button" value="Generate Code Snippet">
+            </form>
+            {% if response %}
+                <div id="generated_code", class="response-box">
+                    <h3>Generated Code</h2>
+                    <textarea id="response" rows="10" cols="50" readonly>{{ response }}</textarea>
+                </div>
+                <br><hr>
+                <h3>Feedback</h3>
+                <br>
+                <div class="feedback-form">
+                    <form action="/feedback" method="post">
+                        <input type="hidden" name="problem_description" value="{{ problem_description }}">
+                        <input type="hidden" name="response" value="{{ response }}">
+                        <label for="feedback">If you'd like, you can provide feedback to improve or modify the generated code:</label><br>
+                        <textarea id="feedback" name="feedback" rows="4" cols="50">{{ feedback }}</textarea>
+                        <br><br>
+                        <input type="submit" class="submit-button" value="Submit Feedback">
+                    </form>
+                    <br>
+                </div>
+            {% endif %}
+            <hr>
+            <p>Powered by OpenAI's GPT-3.5</p>
+            <a href="https://github.com/dbaslan">Developed by dbaslan</a>
+            <br>
+            <a href="https://github.com/dbaslan/CodeSnippetGenerator">Repository available on GitHub</a>
+            <br><br><br><br>
+            This web app was created by Deniz Baran Aslan in 2024
+        </div>
+        <script>
+            function updateResponse(updatedResponse) {
+                const responseElement = document.getElementById('response');
+                responseElement.textContent = updatedResponse;
+            }
+        </script>
+    </body>
+</html>
