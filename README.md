@@ -8,7 +8,7 @@ Tools Used:
 - HTML, CSS, JavaScript
 - GPT 3.5 Turbo
 
-The application is Dockerized an deployed on Microsoft Azure: [Link](csgdba.accgacdfabgph5ed.japaneast.azurecontainer.io)
+The application is Dockerized an deployed on Microsoft Azure: [Link](http://csgdba.accgacdfabgph5ed.japaneast.azurecontainer.io)
 
 The deployment is online as of 10 March 2024, but will be taken offline eventually. Note that the application uses a personal API key, so it cannot be used indefinitely.
 
