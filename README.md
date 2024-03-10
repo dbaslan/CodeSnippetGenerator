@@ -17,3 +17,5 @@ In order to run it locally, install Python, clone the repo, create a .env file i
 Alternatively, install Docker, use the Dockerfile to build a Docker image with 'docker build -t csg .' and then run it with 'docker run -d --name csgc -p 80:80 csg'.
 
 ChatGPT and Copilot were used for identifying and fixing bugs.
+
+![Screenshot](https://raw.githubusercontent.com/dbaslan/CodeSnippetGenerator/main/Screenshot.png)
